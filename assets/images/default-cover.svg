@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <linearGradient id="coverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242424"/>
+      <stop offset="100%" stop-color="#161616"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="12" fill="url(#coverBg)"/>
+  <rect x="1" y="1" width="298" height="298" rx="11" fill="none" stroke="#303030" stroke-width="1.5"/>
+  <circle cx="150" cy="150" r="70" fill="none" stroke="#2c2c2c" stroke-width="20"/>
+  <circle cx="150" cy="150" r="32" fill="#1b1b1b" stroke="#383838" stroke-width="3"/>
+  <circle cx="150" cy="150" r="10" fill="#B8F56A"/>
+  <!-- Minimalist vinyl groove lines -->
+  <circle cx="150" cy="150" r="100" fill="none" stroke="#252525" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <circle cx="150" cy="150" r="120" fill="none" stroke="#202020" stroke-width="1.5" stroke-dasharray="14 10"/>
+</svg>

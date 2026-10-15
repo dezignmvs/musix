@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9FF8B"/>
+      <stop offset="100%" stop-color="#B8F56A"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="#303030" stroke-width="4"/>
+  
+  <!-- Modern Soundwave & Vinyl Motif -->
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#222222" stroke-width="32"/>
+  <circle cx="256" cy="256" r="90" fill="none" stroke="#303030" stroke-width="16"/>
+  <circle cx="256" cy="256" r="44" fill="url(#accentGrad)"/>
+  
+  <!-- Play Accent Triangle -->
+  <polygon points="246,236 276,256 246,276" fill="#111111"/>
+  
+  <!-- Pulse dots -->
+  <circle cx="256" cy="76" r="12" fill="#B8F56A"/>
+  <circle cx="390" cy="150" r="8" fill="#B8F56A" opacity="0.8"/>
+  <circle cx="436" cy="256" r="10" fill="#B8F56A"/>
+  <circle cx="390" cy="362" r="8" fill="#B8F56A" opacity="0.8"/>
+  <circle cx="256" cy="436" r="12" fill="#B8F56A"/>
+  <circle cx="122" cy="362" r="8" fill="#B8F56A" opacity="0.8"/>
+  <circle cx="76" cy="256" r="10" fill="#B8F56A"/>
+  <circle cx="122" cy="150" r="8" fill="#B8F56A" opacity="0.8"/>
+</svg>

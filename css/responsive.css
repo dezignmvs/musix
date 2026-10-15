@@ -1,0 +1,183 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN & MOBILE INTERFACE
+   Compact Topbar, Bottom Navigation, Mini-Player, Safe Areas
+   ========================================================================== */
+
+/* Bottom Navigation Bar (Mobile only by default) */
+.mobile-nav-bar {
+  display: none;
+  height: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background-color: var(--bg-sidebar);
+  border-top: 1px solid var(--border-subtle);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--text-muted);
+  font-size: 10.5px;
+  font-weight: 500;
+  height: 100%;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-item.active {
+  color: var(--accent);
+}
+
+.mobile-nav-item .hgi-stroke {
+  font-size: 20px;
+}
+
+/* Mobile Mini-Player */
+.mobile-mini-player {
+  display: none;
+  position: fixed;
+  bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0px) + 8px);
+  left: 10px;
+  right: 10px;
+  height: 56px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 6px 12px;
+  z-index: 55;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.m-mini-art {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--bg-elevated);
+}
+
+.m-mini-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.m-mini-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.m-mini-artist {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.m-mini-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Mobile Topbar Elements */
+.mobile-header-menu-btn {
+  display: none;
+}
+
+/* Tablet Breakpoint (<= 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .tracks-header,
+  .track-row {
+    grid-template-columns: 36px minmax(180px, 1fr) 80px 40px;
+  }
+
+  .track-col-album {
+    display: none;
+  }
+}
+
+/* Mobile Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+  .app-sidebar {
+    display: none;
+  }
+
+  .main-topbar {
+    padding: 0 16px;
+    height: 56px;
+    min-height: 56px;
+  }
+
+  .nav-arrows {
+    display: none;
+  }
+
+  .mobile-header-menu-btn {
+    display: flex;
+  }
+
+  .view-container {
+    padding: 16px 16px calc(var(--mobile-nav-height) + 80px);
+  }
+
+  /* Hide persistent desktop player on mobile in favor of mini-player */
+  .app-player {
+    display: none;
+  }
+
+  .mobile-nav-bar {
+    display: grid;
+  }
+
+  .mobile-mini-player.has-track {
+    display: flex;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .tracks-header {
+    display: none;
+  }
+
+  .track-row {
+    grid-template-columns: minmax(0, 1fr) 40px;
+    padding: 8px 10px;
+  }
+
+  .track-col-index {
+    display: none;
+  }
+
+  .track-col-duration {
+    display: none;
+  }
+
+  .queue-panel {
+    width: 100%;
+    bottom: var(--mobile-nav-height);
+    height: calc(100vh - var(--mobile-nav-height));
+  }
+}

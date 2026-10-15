@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // User profile document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // User's private playlists subcollection
+      match /playlists/{playlistId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // User's liked songs subcollection
+      match /likedSongs/{songId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // User's listening history
+      match /recentlyPlayed/{trackId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // User settings & preferences
+      match /userSettings/{settingId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Public playlists (if marked public)
+    match /publicPlaylists/{playlistId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && resource.data.ownerId == request.auth.uid;
+    }
+
+    // Track metadata reference collection
+    match /tracks/{trackId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && resource.data.uploaderId == request.auth.uid;
+    }
+  }
+}

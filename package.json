@@ -1,0 +1,24 @@
+{
+  "name": "musics-streaming-app",
+  "version": "1.0.0",
+  "description": "Premium minimal dark music streaming web application powered by BhariyaMusic API, Firebase, Cloudinary, and Hugeicons",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "npx -y serve . -l 3000",
+    "dev": "npx -y serve . -l 3000"
+  },
+  "keywords": [
+    "music",
+    "streaming",
+    "pwa",
+    "bhariyamusic",
+    "hugeicons",
+    "audio"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}
